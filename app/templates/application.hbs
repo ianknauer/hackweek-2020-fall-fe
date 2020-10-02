@@ -1,5 +1,15 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
 
-{{outlet}}
+<div class="relative">
+  {{#unless this.timeIsEmpty}}
+    <div class="bg-image h-64 w-64 bg-no-repeat bg-center bg-contain flex justify-center content-center absolute inset-y-0 right-0">
+    <div class="text-white place-self-center font-semibold capitalize">
+        {{format-time this.timeRemaining}}
+        <p>remaining!</p>
+    </div>
+    </div>
+  {{/unless}}
+
+<div class="flex flex-wrap flex-col justify-center content-center h-screen">
+  {{outlet}}
+</div>
+</div>

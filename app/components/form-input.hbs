@@ -1,0 +1,10 @@
+
+
+<label for=@field class="block text-sm font-medium leading-5 text-gray-700">
+  {{@labelText}}
+</label>
+  <div class="mt-2 sm:col-span-2">
+  <div class="max-w-lg flex rounded-md shadow-sm">
+    <Textarea id={{@field}} @value={{@value}} @focusIn={{this.addFocus}} @focusOut={{this.removeFocus}} id="accomplish" rows="3" class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder={{@placeholder}}></Textarea>
+  </div>
+</div>

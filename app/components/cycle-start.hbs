@@ -1,0 +1,38 @@
+
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div>
+        <div>
+          <FormInput @value={{@changeset.what}} @field={{"what"}} @labelText="What am I trying to accomplish this cyle?" @placeholder="What's the goal for this cylce? What am I looking to get done?" />
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.how}} @field={{"how"}} @labelText="How will I get started?" @placeholder="What's the very first thing I need to do?" />
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.hazards}} @field={{"hazards"}} @labelText="Any Hazards present?" @placeholder="Meetings, distractions etc?"/>
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.energy}} @field={{"energy"}} @labelText="Energy Levels" @placeholder="Low, Medium or High" />
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.moral}} @field={{"moral"}} @labelText="Morale" @placeholder="Low, Medium or High" />
+        </div>
+       
+        <div class="mt-6">
+          <span class="block w-full rounded-md shadow-sm">
+            <button 
+              type="submit"
+              class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out {{if @changeset.isInvalid "opacity-50 cursor-not-allowed"}}"
+              {{on "click" (fn this.createCycle @changeset)}}
+            >
+              Save
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>      

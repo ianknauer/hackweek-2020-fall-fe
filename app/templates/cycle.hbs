@@ -1,0 +1,8 @@
+{{#if this.cycleCreated}}
+  <h1 class="text-3xl mx-auto font-semibold text-purple-800 subpixel-antialiased capitalize">Working on cycle {{this.currentCycle}}</h1>
+{{else}}
+  {{#with (changeset @model this.cycleValidations) as |changesetObj|}}
+    <h1 class="text-3xl mx-auto font-semibold text-purple-800 subpixel-antialiased capitalize">Set up cycle {{this.currentCycle}}</h1>
+    <CycleStart @changeset={{changesetObj}} />
+  {{/with}}
+{{/if}}

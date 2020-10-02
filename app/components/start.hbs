@@ -1,0 +1,43 @@
+
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <form action="#" method="POST">
+        <div>
+          <FormInput @value={{@changeset.goal}} @field={{"goal"}} @labelText="What am I trying to accomplish?" @labelText="What am I trying to accomplish?" @placeholder="What's the goal for this session? What am I looking to get done?"/>
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.reason}} @field={{"reason"}} @labelText="Why is this important and valuable?" @placeholder="Why is this the priority for this block of time? justify why it should be worked on."/>
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.completeness}} @field={{"completeness"}} @labelText="How will I know this is complete." @placeholder="Specific details on what needs to get done, to be measured at the end."/>
+        </div>
+
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.measurable}} @field={{"measurable"}} @labelText="Is this concrete and measurable?" @placeholder="Is this too vague to know whether or not it's doable during this time?"/>
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.other}} @field={{"other"}} @labelText="Anything else noteworthy?" @placeholder="Anything else of note?"/>
+        </div>
+
+        <div class="my-4">
+          <FormInput @value={{@changeset.totalCycles}} @field={{"totalCycles"}} @labelText="Number of cycles" @placeholder="Use a number! 1, 2, 3, etc."/>
+        </div>
+       
+        <div class="mt-6">
+          <span class="block w-full rounded-md shadow-sm">
+            <button 
+              type="submit"
+              class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out {{if @changeset.isInvalid "opacity-50 cursor-not-allowed"}}"
+              {{on "click" (fn this.createSession @changeset)}}
+            >
+              Start
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>      
